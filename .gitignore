@@ -1,0 +1,4 @@
+.gitignore
+.idea
+.DS_Store
+resize_gif.py
