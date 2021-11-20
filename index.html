@@ -1,4 +1,5 @@
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         .container {
             width: 60%;
@@ -9,17 +10,73 @@
             font-size: 2em;
             font-weight: bold;
             text-align: center;
-            margin-top: 40px;
-            margin-bottom: 20px;
+            padding: 40px 0px;
         }
 
-        .authors {
+        @media only screen and (max-width: 1280px) {
+            .col-3 {
+                width: 33.33%;
+                float: left;
+                min-width: 190px;
+            }
+
+            .col-2 {
+                width: 50%;
+                float: left;
+                min-width: 190px;
+            }
+        }
+
+        .author-row {
+            font-size: 20px;
             display: flex;
             justify-content: center;
         }
 
-        .author-item {
-            margin: 0 15px;
+        .text-center {
+            text-align: center;
+        }
+
+        .col-3 {
+            width: 25%;
+            float: left;
+        }
+
+        .affil-row {
+            margin: 26px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .col-2 {
+            width: 30%;
+            float: left;
+        }
+
+        .venue {
+            color: #1367a7;
+        }
+
+        .paper-btn-parent {
+            display: flex;
+            justify-content: center;
+            margin: 16px;
+        }
+
+        .paper-btn {
+            position: relative;
+            text-align: center;
+            display: inline-block;
+            margin: 8px;
+            padding: 8px 8px;
+            border-width: 0;
+            outline: none;
+            border-radius: 2px;
+            background-color: #1367a7;
+            color: #ecf0f1 !important;
+            font-size: 20px;
+            width: 100px;
+            font-weight: 600;
         }
 
         a {
@@ -27,10 +84,8 @@
         }
 
         sup {
-            position: relative;
-            top: -0.2em;
-            font-size: 75%;
-            line-height: 0;
+            vertical-align: super;
+            font-size: smaller;
         }
 
         .company {
@@ -61,9 +116,11 @@
             display: flex;
             justify-content: center;
         }
+
         .cat-row {
             margin-bottom: 15px;
         }
+
         .column {
             margin-right: 20px;
         }
@@ -73,11 +130,13 @@
             width: 400px;
             height: 400px;
         }
+
         .cat-img {
             padding-bottom: 5px;
             height: 125px;
             width: 600px;
         }
+
         .description {
             text-align: center;
         }
@@ -91,37 +150,70 @@
             width: 700px;
             height: 700px;
         }
+
+        pre {
+            font-size: 14px;
+            background-color: #eee;
+            padding: 16px;
+        }
     </style>
 </head>
 <body>
 <div class="container">
     <div class="title">Controllable and Compositional Generation with Latent-Space Energy-Based Models</div>
 
+    <div class="authors">
+        <div class="author-row">
+            <div class="col-3 text-center"><a href="https://weilinie.github.io">Weili Nie</a><sup>1</sup></div>
+            <div class="col-3 text-center"><a href="http://latentspace.cc/arash_vahdat">Arash Vahdat</a><sup>1</sup>
+            </div>
+            <div class="col-3 text-center"><a href="http://tensorlab.cms.caltech.edu/users/anima">Anima Anandkumar</a><sup>1,2</sup></div>
+        </div>
+    </div>
+
+    <div class="affil-row">
+        <div class="col-2 text-center"><sup>1</sup>NVIDIA</div>
+        <div class="col-2 text-center"><sup>2</sup>Caltech</div>
+    </div>
+
+    <div class="affil-row">
+        <div class="venue text-center"><b>NeurIPS 2021</b></div>
+    </div>
+
+    <div style="clear: both">
+        <div class="paper-btn-parent">
+            <a class="paper-btn" href="assets/lace_paper.pdf">
+                <i class="fa fa-file"></i>
+                Paper
+            </a>
+            <a class="paper-btn" href="https://docs.google.com/presentation/d/1L82MxdMIJ5fjWtogeJHqXMQ0dRtCOsseQOPlsEm-oeA/edit?usp=sharing">
+                <i class="fa-file-pdf-o"></i>
+                Slides
+            </a>
+            <a class="paper-btn" href="https://github.com/NVlabs/LACE">
+                <i class="fa fa-code"></i>
+                Code
+            </a>
+        </div>
+    </div>
+
     <div class="section">
         <div class="section-header">Abstract</div>
         <div>
             Controllable generation is one of the key requirements for successful adoption of deep generative models in
-            real-world applications, but it still remains challenging. In particular, the compositional ability to
-            generate
-            novel concept combinations is out of reach for most current models. In this work, we use energy-based models
-            (EBMs) to handle compositional generation over a set of attributes. To make them scalable to high-resolution
-            image generation, we introduce an EBM in the latent space of a pre-trained generative model such as
-            StyleGANs.
-            We propose a novel EBM formulation representing the joint distribution of data and attributes together, and
-            we
-            show how sampling from it is formulated as solving an ordinary differential equation (ODE). Given a
-            pre-trained
-            generator, all we need for controllable generation is to train an attribute classifier. Sampling with ODEs
-            is
-            done efficiently in the latent space and is robust to hyperparameters. Thus, our method is simple, fast to
-            train, and efficient to sample. Experimental results show that our method outperforms the state-of-the-art
-            in
-            both conditional sampling and sequential editing. In compositional generation, our method excels at
-            zero-shot
-            generation of unseen attribute combinations. Also, by composing energy functions with logical operators,
-            this
-            work is the first to achieve strong compositionality in generating photo-realistic images of resolution
-            1024x1024.
+            real-world applications, but it still remains as a great challenge. In particular, the compositional
+            ability to generate novel concept combinations is out of reach for most current models. In this work, we use
+            energy-based models (EBMs) to handle compositional generation over a set of attributes. To make them
+            scalable to high-resolution image generation, we introduce an EBM in the latent space of a pre-trained
+            generative model such as StyleGAN. We propose a novel EBM formulation representing the joint distribution of
+            data and attributes together, and we show how sampling from it is formulated as solving an ordinary
+            differential equation (ODE). Given a pre-trained generator, all we need for controllable generation is to
+            train an attribute classifier. Sampling with ODEs is done efficiently in the latent space and is robust to
+            hyperparameters. Thus, our method is simple, fast to train, and efficient to sample. Experimental results
+            show that our method outperforms the state-of-the-art in both conditional sampling and sequential editing.
+            In compositional generation, our method excels at zero-shot generation of unseen attribute combinations.
+            Also, by composing energy functions with logical operators, this work is the first to achieve such
+            compositionality in generating photo-realistic images of resolution 1024x1024.
         </div>
     </div>
 
@@ -129,9 +221,10 @@
         <!--        <p class="image-name">Image Editing</p>-->
 
         <div class="section">
-            <div class="section-header">Controllable Generation on FFHQ [1] </div>
+            <div class="section-header">Controllable Generation on FFHQ [1]</div>
             <div>
-                In controllable generation on FFHQ, the image synthesis is controlled by the attribute code. As shown in the
+                In controllable generation on FFHQ, the image synthesis is controlled by the attribute code. As shown in
+                the
                 following, modifying each attribute corresponds to an effective and disentangled semantic change in
                 synthesized images. Note that the original image resolution is 1024x1024, and we have compressed the
                 gifs to some degree to save the memory. As a result, you may observe some artifacts caused by the gif
@@ -165,71 +258,71 @@
         </div>
     </div>
 
-<!--    <div class="all-images">-->
+    <!--    <div class="all-images">-->
 
-<!--        <div class="section">-->
-<!--            <div class="section-header">Sequential Editing</div>-->
-<!--            <div>-->
-<!--                In sequential editing, given a sequence of attributes, we semantically edit the images by changing an-->
-<!--                attribute each time without affecting other attributes and face identity. In the video below, we-->
-<!--                visualize the effect of sequentially editing four attributes: yaw, smile, age and glasses.-->
-<!--            </div>-->
-<!--        </div>-->
+    <!--        <div class="section">-->
+    <!--            <div class="section-header">Sequential Editing</div>-->
+    <!--            <div>-->
+    <!--                In sequential editing, given a sequence of attributes, we semantically edit the images by changing an-->
+    <!--                attribute each time without affecting other attributes and face identity. In the video below, we-->
+    <!--                visualize the effect of sequentially editing four attributes: yaw, smile, age and glasses.-->
+    <!--            </div>-->
+    <!--        </div>-->
 
-<!--        <div class="video-row">-->
-<!--            <div>-->
-<!--                <video src="imgs/seq-demo_yaw_smile_age_glasses_curated.mp4" controls></video>-->
-<!--                <div class="description">yaw -> smile -> age -> glasses</div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
+    <!--        <div class="video-row">-->
+    <!--            <div>-->
+    <!--                <video src="imgs/seq-demo_yaw_smile_age_glasses_curated.mp4" controls></video>-->
+    <!--                <div class="description">yaw -> smile -> age -> glasses</div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
 
-<!--    <div class="all-images">-->
-<!--        &lt;!&ndash;        <p> Latent Traversal in Conditional Sampling </p>&ndash;&gt;-->
+    <!--    <div class="all-images">-->
+    <!--        &lt;!&ndash;        <p> Latent Traversal in Conditional Sampling </p>&ndash;&gt;-->
 
-<!--        <div class="section">-->
-<!--            <div class="section-header">Latent Traversal</div>-->
-<!--            <div>-->
-<!--                Conditioned on an attribute or a combination of attributes, we can traverse smoothly in the latent-->
-<!--                space to get diverse synthesized images while making sure the images consistently satisfy the-->
-<!--                conditioning information.-->
-<!--            </div>-->
-<!--        </div>-->
+    <!--        <div class="section">-->
+    <!--            <div class="section-header">Latent Traversal</div>-->
+    <!--            <div>-->
+    <!--                Conditioned on an attribute or a combination of attributes, we can traverse smoothly in the latent-->
+    <!--                space to get diverse synthesized images while making sure the images consistently satisfy the-->
+    <!--                conditioning information.-->
+    <!--            </div>-->
+    <!--        </div>-->
 
-<!--        <div class="row">-->
-<!--            <div class="column">-->
-<!--                <img src="imgs/latent_trav_glasses_v2-re.gif">-->
-<!--                <div class="description">glasses=1</div>-->
-<!--            </div>-->
-<!--            <div>-->
-<!--                <img src="imgs/latent_trav-yaw_smile_age-re.gif">-->
-<!--                <div class="description"> yaw=front, smile=1, age=55</div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
+    <!--        <div class="row">-->
+    <!--            <div class="column">-->
+    <!--                <img src="imgs/latent_trav_glasses_v2-re.gif">-->
+    <!--                <div class="description">glasses=1</div>-->
+    <!--            </div>-->
+    <!--            <div>-->
+    <!--                <img src="imgs/latent_trav-yaw_smile_age-re.gif">-->
+    <!--                <div class="description"> yaw=front, smile=1, age=55</div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
 
-<!--    <div class="all-images">-->
-<!--        &lt;!&ndash;        <p> Latent Traversal in Zero-Shot Generation </p>&ndash;&gt;-->
+    <!--    <div class="all-images">-->
+    <!--        &lt;!&ndash;        <p> Latent Traversal in Zero-Shot Generation </p>&ndash;&gt;-->
 
-<!--        <div class="section">-->
-<!--            <div class="section-header">Latent Traversal in Zero-Shot Generation</div>-->
-<!--            <div>-->
-<!--                In the extreme case of conditioning on the novel attribute combinations that are unseen during training,-->
-<!--                we can still traverse smoothly in the latent space while satisfying the conditioning information.-->
-<!--            </div>-->
-<!--        </div>-->
+    <!--        <div class="section">-->
+    <!--            <div class="section-header">Latent Traversal in Zero-Shot Generation</div>-->
+    <!--            <div>-->
+    <!--                In the extreme case of conditioning on the novel attribute combinations that are unseen during training,-->
+    <!--                we can still traverse smoothly in the latent space while satisfying the conditioning information.-->
+    <!--            </div>-->
+    <!--        </div>-->
 
-<!--        <div class="row">-->
-<!--            <div class="column">-->
-<!--                <img src="imgs/zero_shot_trav_v2-re.gif">-->
-<!--                <div class="description"> glasses=1, beard=1, smile=1, age=15</div>-->
-<!--            </div>-->
-<!--            <div>-->
-<!--                <img src="imgs/zero_shot_trav_girl_v4-re.gif">-->
-<!--                <div class="description"> glasses=1, gender=female, smile=1, age=10</div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
+    <!--        <div class="row">-->
+    <!--            <div class="column">-->
+    <!--                <img src="imgs/zero_shot_trav_v2-re.gif">-->
+    <!--                <div class="description"> glasses=1, beard=1, smile=1, age=15</div>-->
+    <!--            </div>-->
+    <!--            <div>-->
+    <!--                <img src="imgs/zero_shot_trav_girl_v4-re.gif">-->
+    <!--                <div class="description"> glasses=1, gender=female, smile=1, age=10</div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
 
     <div class="all-images">
         <!--        <p> Image Editing on MetFaces </p>-->
@@ -259,11 +352,14 @@
         <!--        <p class="image-name">Image Editing</p>-->
 
         <div class="section">
-            <div class="section-header">Controllable Generation on AFHQ Cats [3] </div>
+            <div class="section-header">Controllable Generation on AFHQ Cats [3]</div>
             <div>
-                In controllable generation on AFHQ Cats (512x512), the image synthesis is controlled by the attribute code. As shown in the
-                following, the generated images are conditioned on either a single attribute or a combination of multiple attributes.
-                Note that the original AFHQ Cats dataset does not contain the ground-truth attribute, and thus we have used the CLIP [4]
+                In controllable generation on AFHQ Cats (512x512), the image synthesis is controlled by the attribute
+                code. As shown in the
+                following, the generated images are conditioned on either a single attribute or a combination of
+                multiple attributes.
+                Note that the original AFHQ Cats dataset does not contain the ground-truth attribute, and thus we have
+                used the CLIP [4]
                 to first annotate the generated images and then apply our method.
             </div>
         </div>
@@ -311,15 +407,28 @@
     </div>
 
     <div class="section">
+        <div class="section-header">Citation</div>
+        <pre><code>@inproceedings{nie2021controllable,
+  title={Controllable and compositional generation with latent-space energy-based models},
+  author={Nie, Weili and Vahdat, Arash and Anandkumar, Anima},
+  booktitle={Thirty-Fifth Conference on Neural Information Processing Systems},
+  year={2021}
+}</code></pre>
+    </div>
+
+    <div class="section">
         <div class="section-header">References</div>
         <div>
-            [1] T. Karras, S. Laine, and T. Aila, A style-based generator architecture for generative adversarial networks. CVPR 2019.
+            [1] T. Karras, S. Laine, and T. Aila, A style-based generator architecture for generative adversarial
+            networks. CVPR 2019.
         </div>
         <div>
-            [2] T. Karras, M. Aittala, J. Hellsten, S. Laine, J. Lehtinen, and T. Aila, Training generative adversarial networks with limited data. NeurIPS 2021.
+            [2] T. Karras, M. Aittala, J. Hellsten, S. Laine, J. Lehtinen, and T. Aila, Training generative adversarial
+            networks with limited data. NeurIPS 2021.
         </div>
         <div>
-            [3] Y. Choi and Y. Uh and J. Yoo and J.-W. Ha, StarGAN v2: Diverse Image Synthesis for Multiple Domains, CVPR 2020.
+            [3] Y. Choi and Y. Uh and J. Yoo and J.-W. Ha, StarGAN v2: Diverse Image Synthesis for Multiple Domains,
+            CVPR 2020.
         </div>
         <div>
             [4] A. Radford, et. al, Learning Transferable Visual Models From Natural Language Supervision, ICML 2021.
