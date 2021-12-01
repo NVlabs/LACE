@@ -1,6 +1,6 @@
 # Controllable and Compositional Generation with Latent-Space Energy-Based Models
 
-![Python 3.7](https://img.shields.io/badge/Python-3.8-green.svg?style=plastic)
+![Python 3.8](https://img.shields.io/badge/Python-3.8-green.svg?style=plastic)
 ![pytorch 1.7.1](https://img.shields.io/badge/Pytorch-1.7.1-green.svg?style=plastic)
 ![Torchdiffeq 0.2.1](https://img.shields.io/badge/Torchdiffeq-0.2.1-green.svg?style=plastic)
 
