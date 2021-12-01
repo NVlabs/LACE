@@ -172,7 +172,7 @@ bash scripts/run_seq_edit_score.sh
 
 Note that:
 
-- Similarly, you first need to trained an FFHQ image classifier and get the FID reference statics to compute ACC and FID
+- Similarly, you first need to train an FFHQ image classifier and get the FID reference statics to compute ACC and FID
   score by following the [instructions](FFHQ/prepare_models_data/README.md), respectively.
 
 - To get the face identity preservation (ID) score, you first need to download the
