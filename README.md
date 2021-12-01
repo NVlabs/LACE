@@ -76,8 +76,8 @@ bash scripts/run_cond_ode_sample.sh
 bash scripts/run_cond_ld_sample.sh
 ```
 
-By default, we set `x` to `w`, meaning we use the w-space classifiers, because we find our method works the best in w-space.
-You can change the value of `x` to `z` or `i` to do sampling in z-space or pixel space, for a comparison.
+By default, we set `x` to `w`, meaning we use the w-space classifier, because we find our method works the best in w-space.
+You can change the value of `x` to `z` or `i` to use the classifier in z-space or pixel space, for a comparison.
 
 To compute the conditional accuracy (ACC) and FID scores in conditional sampling with the ODE or LD sampler, you can
 run:
