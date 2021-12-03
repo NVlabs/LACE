@@ -1,13 +1,14 @@
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        .container {
-            width: 60%;
-            margin: 0 20%;
+        body {
+            width: 980px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.25;
         }
-
         .title {
-            font-size: 2em;
+            font-size: 36px;
             font-weight: bold;
             text-align: center;
             padding: 40px 0px;
@@ -18,12 +19,16 @@
                 width: 33.33%;
                 float: left;
                 min-width: 190px;
+                font-size: 20px;
+                font-weight: 500;
             }
 
             .col-2 {
                 width: 50%;
                 float: left;
                 min-width: 190px;
+                font-size: 20px;
+                font-weight: 500;
             }
         }
 
@@ -38,8 +43,10 @@
         }
 
         .col-3 {
-            width: 25%;
+            width: 20%;
             float: left;
+            font-size: 20px;
+            font-weight: 500;
         }
 
         .affil-row {
@@ -49,11 +56,14 @@
         }
 
         .col-2 {
-            width: 30%;
+            width: 20%;
             float: left;
+            font-size: 20px;
+            font-weight: 500;
         }
 
         .venue {
+            font-size: 24px;
             color: #1367a7;
         }
 
@@ -68,10 +78,10 @@
             text-align: center;
             display: inline-block;
             margin: 8px;
-            padding: 8px 8px;
+            padding: 14px 8px;
             border-width: 0;
             outline: none;
-            border-radius: 2px;
+            border-radius: 5px;
             background-color: #1367a7;
             color: #ecf0f1 !important;
             font-size: 20px;
@@ -155,6 +165,9 @@
             font-size: 14px;
             background-color: #eee;
             padding: 16px;
+        }
+        .reference {
+            font-size: 0.9em;
         }
     </style>
 </head>
@@ -418,19 +431,19 @@
 
     <div class="section">
         <div class="section-header">References</div>
-        <div>
+        <div class="reference">
             [1] T. Karras, S. Laine, and T. Aila, A style-based generator architecture for generative adversarial
             networks. CVPR 2019.
         </div>
-        <div>
+        <div class="reference">
             [2] T. Karras, M. Aittala, J. Hellsten, S. Laine, J. Lehtinen, and T. Aila, Training generative adversarial
             networks with limited data. NeurIPS 2021.
         </div>
-        <div>
+        <div class="reference">
             [3] Y. Choi and Y. Uh and J. Yoo and J.-W. Ha, StarGAN v2: Diverse Image Synthesis for Multiple Domains,
             CVPR 2020.
         </div>
-        <div>
+        <div class="reference">
             [4] A. Radford, et. al, Learning Transferable Visual Models From Natural Language Supervision, ICML 2021.
         </div>
     </div>
